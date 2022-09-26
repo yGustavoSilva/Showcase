@@ -1,0 +1,38 @@
+/* Menu */
+
+#menuToggle:checked~header {
+    transform: translateX(0);
+    padding: 1rem 3rem;
+    border-radius: 0;
+}
+
+#menuToggle:checked~header .menu {
+    align-items: center;
+    justify-content: center;
+}
+
+#menuToggle:checked~header .menuDraw:nth-of-type(1) {
+    width: 80%;
+    transform: rotate(-90deg);
+}
+
+#menuToggle:checked~header .menuDraw:nth-of-type(2) {
+    width: 0;
+}
+
+#menuToggle:checked~header .menuDraw:nth-of-type(3) {
+    width: 80%;
+    transform: rotate(90deg);
+}
+
+#menuToggle:checked~header .menuDraw {
+    animation: 1s pulse alternate infinite;
+}
+
+/* keyframes */
+
+@keyframes pulse {
+    100% {
+        box-shadow: 0px 15px 5px var(--highlight);
+    }
+}

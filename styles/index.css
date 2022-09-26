@@ -1,0 +1,186 @@
+@import 'reset.css';
+@import 'animations.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg: #002;
+    --sub-bg: #003;
+    --fg: #fff;
+    --sub-fg: #ccc;
+    --emphasis: #fff;
+
+    --highlight: #f05;
+}
+
+* {
+    color: var(--fg);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    position: relative;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    padding: 1rem;
+    transform: translateX(calc(100% - (30px + 2rem)));
+    transition: 1s;
+    background: var(--bg);
+    box-shadow: 0px 0px 5px var(--highlight);
+    border-radius: 10px;
+}
+
+nav {
+    align-self: center;
+}
+
+.menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menuDraw {
+    width: 100%;
+    height: 2px;
+    background: var(--highlight);
+    transition: 1s;
+}
+
+main {
+    margin: 1rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6rem;
+}
+
+.aboutMe {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    line-height: 2rem;
+    row-gap: 1rem;
+    letter-spacing: 2px;
+}
+
+.aboutMe h1 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.highlight {
+    color: var(--highlight);
+    font-family: 'Roboto', sans-serif;
+}
+
+.clonedDesign {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 1rem .5rem;
+    border-radius: 10px;
+    background: var(--sub-bg);
+}
+
+.clonedDesign h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    row-gap: 1rem;
+    font-weight: 300;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: .5rem;
+    background: var(--bg);
+}
+
+.card h3 {
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.card a {
+    display: block;
+    padding: .5rem 1rem;
+    text-align: center;
+    background: var(--highlight);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    padding: 2.5rem 0;
+    gap: 1.5rem 1rem;
+    background: var(--sub-bg);
+}
+
+footer h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+footer a {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    padding: .3rem;
+    background: var(--emphasis);
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (min-width: 800px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 1150px) {
+    .cards {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .aboutMe {
+        padding: 0 2rem;
+    }
+}
